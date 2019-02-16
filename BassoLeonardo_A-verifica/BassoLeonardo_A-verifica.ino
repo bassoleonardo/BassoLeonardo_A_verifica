@@ -10,6 +10,7 @@ int delay_1;
 int delay_2;
 int delay_3;
 int delay_4;
+int cicli;
 void setup() {
   // put your setup code here, to run once:
 pinMode(led1, OUTPUT);
@@ -20,26 +21,21 @@ Serial.begin(9600);
 }
 
 void loop() {
-Serial.println("quanto tempo vuoi far rimanere acceso il led rosso?");
-  while(Serial.available() == 0);
-  delay_1 = Serial.readString().toInt();
+  delay_1 = random(100, 2000);
   Serial.println(delay_1);
-delay(1000);
-Serial.println("quanto tempo vuoi far rimanere acceso il led giallo?");
-  while(Serial.available() == 0);
-  delay_2 = Serial.readString().toInt();
+  delay_2 = random(100, 2000);
   Serial.println(delay_2);
-delay(1000);
-Serial.println("quanto tempo vuoi far rimanere acceso il led bianco?");
-  while(Serial.available() == 0);
-  delay_3 = Serial.readString().toInt();
+  delay_3 = random(100, 2000);
   Serial.println(delay_3);
-delay(1000);
-Serial.println("quanto tempo vuoi far rimanere acceso il led verde?");
-  while(Serial.available() == 0);
-  delay_4 = Serial.readString().toInt();
+  delay_4 = random(100, 2000);
   Serial.println(delay_4);
 delay(1000);
+  Serial.println("quanti cicli vuoi fare?");
+  while(Serial.available() == 0);
+  cicli = Serial.readString().toInt();
+  Serial.println(cicli);
+  for(int i = 0; i < cicli; i++)
+  {
   digitalWrite(led1, HIGH);
   digitalWrite(led2, LOW);
   digitalWrite(led3, LOW);
@@ -60,4 +56,5 @@ delay(1000);
   digitalWrite(led3, LOW);
   digitalWrite(led4, HIGH);
   delay(delay_4);
+  }
 }
