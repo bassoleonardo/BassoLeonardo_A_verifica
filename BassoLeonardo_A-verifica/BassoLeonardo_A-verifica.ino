@@ -20,42 +20,26 @@ Serial.begin(9600);
 }
 
 void loop() {
-  Serial.println("quanto tempo vuoi far rimanere acceso il led rosso?");
-  while(Serial.available() == 0)
-  if (Serial.available() > 0)
-  {
-    input1 = Serial.readString();
-    delay_1 = input1.toInt();
-    Serial.println(delay_1);
-  }
-  delay(100);
+Serial.println("quanto tempo vuoi far rimanere acceso il led rosso?");
+  while(Serial.available() == 0);
+  delay_1 = Serial.readString().toInt();
+  Serial.println(delay_1);
+delay(1000);
 Serial.println("quanto tempo vuoi far rimanere acceso il led giallo?");
-while(Serial.available() == 0)
-if (Serial.available() > 0)
-  {
-    input2 = Serial.readString();
-    delay_2 = input2.toInt();
-    Serial.println(delay_2);
-  }
-  delay(100);
+  while(Serial.available() == 0);
+  delay_2 = Serial.readString().toInt();
+  Serial.println(delay_2);
+delay(1000);
 Serial.println("quanto tempo vuoi far rimanere acceso il led bianco?");
-while(Serial.available() == 0)
-if (Serial.available() > 0)
-  {
-    input3 = Serial.readString();
-    delay_3 = input3.toInt();
-    Serial.println(delay_3);
-  }
-  delay(100);
+  while(Serial.available() == 0);
+  delay_3 = Serial.readString().toInt();
+  Serial.println(delay_3);
+delay(1000);
 Serial.println("quanto tempo vuoi far rimanere acceso il led verde?");
-while(Serial.available() == 0)
-if (Serial.available() > 0)
-  {
-    input4 = Serial.readString();
-    delay_4 = input4.toInt();
-    Serial.println(delay_4);
-  }
-  delay(100);
+  while(Serial.available() == 0);
+  delay_4 = Serial.readString().toInt();
+  Serial.println(delay_4);
+delay(1000);
   digitalWrite(led1, HIGH);
   digitalWrite(led2, LOW);
   digitalWrite(led3, LOW);
